@@ -1,13 +1,15 @@
-package app.vytrack.stepDefinitions;
+package vytrack.stepDefinitions;
 
-import app.vytrack.utilities.Driver;
+
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import vytrack.utilities.Driver;
 
-import java.util.List;
+import static java.lang.System.*;
+
 
 public class Hooks {
 
@@ -15,14 +17,14 @@ public class Hooks {
     // @Before is coming from cucumber. It is running before each scenario
     @Before
     public void setUpScenario(){
-        System.out.println("--> It is coming from @Before in Hooks ");
+        out.println("--> It is coming from @Before in Hooks ");
     }
 
 
     // @After is coming from cucumber. It is running after each scenario
     @After
     public void teardownScenario(Scenario scenario){
-        System.out.println("--> It is coming from @After in Hooks ");
+        out.println("--> It is coming from @After in Hooks ");
 
 
         if(scenario.isFailed()) {
