@@ -1,18 +1,15 @@
-package app.vytrack.stepDefinitions;
+package vytrack.stepDefinitions;
 
-import app.vytrack.pages.BasePage;
-import app.vytrack.pages.LoginPage;
-import app.vytrack.utilities.ConfigurationReader;
-import app.vytrack.utilities.Driver;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import vytrack.pages.BasePage;
+import vytrack.pages.LoginPage;
+import vytrack.utilities.BrowserUtils;
+import vytrack.utilities.ConfigurationReader;
+import vytrack.utilities.Driver;
 
 public class ManagementLogin {
 
@@ -40,8 +37,14 @@ public class ManagementLogin {
         loginPage.loginBtn.click();
     }
 
-    @Then("manager should see VyTrack Dashboard page")
-    public void manager_should_see_vy_track_dashboard_page() {
-        Assert.assertEquals("Title verification is failed!","Dashboard",loginPage.dashboardTitle.getText());
+    @Then("manager should see VyTrack {string} page")
+    public void managerShouldSeeVyTrackPage(String title) {
+
+      //  Assert.assertEquals("Title verification is failed!","Dashboard",loginPage.dashboardTitle.getText());
+
+        BrowserUtils.waitFor(2);
+        Assert.assertEquals(loginPage.getTitle(), title);
     }
+
+
 }

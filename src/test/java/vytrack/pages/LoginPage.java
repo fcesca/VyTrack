@@ -1,6 +1,6 @@
-package app.vytrack.pages;
+package vytrack.pages;
 
-import app.vytrack.utilities.Driver;
+import vytrack.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -28,6 +28,10 @@ public class LoginPage {
 
     @FindBy(xpath = "//a[@href='/user/reset-request']")
     public WebElement forgotPasswordBtn;
+
+    public String getTitle(){
+        return Driver.getDriver().getTitle();
+    }
 
     public void login(String username, String password){
         inputUsername.sendKeys(username);

@@ -1,4 +1,4 @@
-package app.vytrack.runner;
+package vytrack.runner;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -13,9 +13,9 @@ import org.junit.runner.RunWith;
                 "me.jvt.cucumber.report.PrettyReports:target/cucumber"
         },
         features = "src/test/resources/features" ,
-        glue = "app/vytrack/stepDefinitions",
+        glue = "vytrack/stepDefinitions",
         dryRun = false,
-        tags = "@VyTrackManagementLogin"
+        tags = "@Refresh"
 )
 public class CukesRunner {
 }
