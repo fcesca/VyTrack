@@ -1,14 +1,14 @@
-package app.vytrack.stepDefinitions;
+package vytrack.stepDefinitions;
 
-import app.vytrack.pages.LoginPage;
-import app.vytrack.utilities.ConfigurationReader;
-import app.vytrack.utilities.Driver;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import vytrack.pages.LoginPage;
+import vytrack.utilities.BrowserUtils;
+import vytrack.utilities.ConfigurationReader;
+import vytrack.utilities.Driver;
 
 public class ManagementLogin {
 
@@ -22,6 +22,7 @@ public class ManagementLogin {
     @When("manager enters username {string}")
     public void manager_enters_username(String string) {
         loginPage.inputUsername.sendKeys("storemanager204");
+
     }
 
     @When("manager enters password {string}")
@@ -34,11 +35,9 @@ public class ManagementLogin {
         loginPage.loginBtn.click();
     }
 
-    @Then("manager should see url contains Dashboard")
-    public void manager_should_see_url_contains_dashboard() {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
-        Assert.assertTrue(wait.until(ExpectedConditions.titleIs("Dashboard")));
+    @Then("manager should see VyTrack {string} page")
+    public void managerShouldSeeVyTrackPage(String title) {
+        BrowserUtils.waitFor(2);
+        Assert.assertEquals(loginPage.getTitle(), title);
     }
 }
-
-
