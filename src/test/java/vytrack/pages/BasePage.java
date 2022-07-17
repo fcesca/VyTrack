@@ -11,6 +11,12 @@ public class BasePage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(className = "oro-subtitle")
+    @FindBy(xpath = "//h1[@class='oro-subtitle']")
     public WebElement dashboardTitle;
+
+    @FindBy(xpath = "(//span[@class='title title-level-1'])[2]")
+    public WebElement fleetDropdown;
+
+    @FindBy(linkText = "/entity/Extend_Entity_VehiclesModel")
+    public WebElement vehiclesModelBtn;
 }

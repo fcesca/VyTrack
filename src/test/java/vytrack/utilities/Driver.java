@@ -52,6 +52,5 @@ public class Driver {
             driverPool.get().quit(); // this line will terminate the existing driver session. When using this, driver will not be even null
             driverPool.remove();  //driver = null
         }
-
     }
 }

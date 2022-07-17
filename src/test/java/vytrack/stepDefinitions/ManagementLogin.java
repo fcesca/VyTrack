@@ -1,14 +1,14 @@
 package vytrack.stepDefinitions;
 
 
+import vytrack.pages.LoginPage;
+import vytrack.utilities.ConfigurationReader;
+import vytrack.utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import vytrack.pages.LoginPage;
 import vytrack.utilities.BrowserUtils;
-import vytrack.utilities.ConfigurationReader;
-import vytrack.utilities.Driver;
 
 public class ManagementLogin {
 

@@ -23,9 +23,6 @@ public class LoginPage {
     @FindBy(id = "_submit")
     public WebElement loginBtn;
 
-    @FindBy(xpath = "//h1[@class='oro-subtitle']")
-    public WebElement dashboardTitle;
-
     @FindBy(xpath = "//a[@href='/user/reset-request']")
     public WebElement forgotPasswordBtn;
 
