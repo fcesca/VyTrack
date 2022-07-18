@@ -12,41 +12,41 @@ public class AllVehiclesModelPage {
     }
 
     @FindBy(xpath = "//h1[@class='oro-subtitle']")
-    public WebElement allVehicleModelSubtitle;
+    public WebElement allVehiclesModelSubtitle;
 
-    @FindBy(xpath = "//div[@class=\'column-manager dropdown\']")
+    @FindBy(xpath = "(//a[@href='#']/i)[10]")
     public WebElement gridSettingsBtn;
 
-    @FindBy(xpath = "//input[@id='column-c150']")
+    @FindBy(xpath = "(//input[starts-with(@id,'column-c')])[1]")
     public WebElement idCheckbox;
 
-    @FindBy(xpath = "//input[@id='column-c151']")
+    @FindBy(xpath = "(//input[starts-with(@id,'column-c')])[2]")
     public WebElement modelNameCheckbox;
 
-    @FindBy(xpath = "//input[@id='column-c152']")
+    @FindBy(xpath = "(//input[starts-with(@id,'column-c')])[3]")
     public WebElement makeCheckbox;
 
-    @FindBy(xpath = "//input[@id='column-c153']")
+    @FindBy(xpath = "(//input[starts-with(@id,'column-c')])[4]")
     public WebElement canBeRequestedCheckbox;
 
-    @FindBy(xpath = "//input[@id='column-c154']")
+    @FindBy(xpath = "(//input[starts-with(@id,'column-c')])[5]")
     public WebElement catalogueValueCheckbox;
 
-    @FindBy(xpath = "//input[@id='column-c155']")
+    @FindBy(xpath = "(//input[starts-with(@id,'column-c')])[6]")
     public WebElement cO2FeeCheckbox;
 
-    @FindBy(xpath = "//input[@id='column-c156']")
+    @FindBy(xpath = "(//input[starts-with(@id,'column-c')])[7]")
     public WebElement costCheckbox;
 
-    @FindBy(xpath = "//input[@id='column-c157']")
+    @FindBy(xpath = "(//input[starts-with(@id,'column-c')])[8]")
     public WebElement totalCostCheckbox;
 
-    @FindBy(xpath = "//input[@id='column-c158']")
+    @FindBy(xpath = "(//input[starts-with(@id,'column-c')])[9]")
     public WebElement cO2EmissionsCheckbox;
 
-    @FindBy(xpath = "//input[@id='column-c159']")
+    @FindBy(xpath = "(//input[starts-with(@id,'column-c')])[10]")
     public WebElement fuelTypeCheckbox;
 
-    @FindBy(xpath = "//input[@id='column-c160']")
+    @FindBy(xpath = "(//input[starts-with(@id,'column-c')])[11]")
     public WebElement vendorsCheckbox;
 }

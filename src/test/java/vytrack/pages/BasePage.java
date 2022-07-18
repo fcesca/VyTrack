@@ -17,6 +17,6 @@ public class BasePage {
     @FindBy(xpath = "(//span[@class='title title-level-1'])[2]")
     public WebElement fleetDropdown;
 
-    @FindBy(linkText = "/entity/Extend_Entity_VehiclesModel")
+    @FindBy(xpath = "//span[.='Vehicles Model']")
     public WebElement vehiclesModelBtn;
 }
