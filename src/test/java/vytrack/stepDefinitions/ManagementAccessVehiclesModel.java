@@ -3,15 +3,13 @@ package vytrack.stepDefinitions;
 import vytrack.pages.AllVehiclesModelPage;
 import vytrack.pages.BasePage;
 import vytrack.pages.LoginPage;
-import vytrack.utilities.Driver;
+import vytrack.utilities.BrowserUtils;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ManagementAccessVehicleModelPage {
+public class ManagementAccessVehiclesModel {
 
     ManagementLogin managementLogin = new ManagementLogin();
     LoginPage loginPage = new LoginPage();
@@ -31,15 +29,15 @@ public class ManagementAccessVehicleModelPage {
     }
     @When("Store Manager or Sales Manager clicks on “Vehicles Model” in the “Fleet” dropdown menu")
     public void store_manager_or_sales_manager_clicks_on_vehicles_model_in_the_fleet_dropdown_menu() {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5);
+        BrowserUtils.waitFor(2);
         basePage.fleetDropdown.click();
-        wait.until(ExpectedConditions.visibilityOf(basePage.vehiclesModelBtn)).click();
-        // WIP ^
+        BrowserUtils.waitFor(2);
+        basePage.vehiclesModelBtn.click();
     }
     @When("is directed to the page titled “All Vehicles Model”")
     public void is_directed_to_the_page_titled_all_vehicles_model() {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
-        Assert.assertEquals("All Vehicles Model", wait.until(ExpectedConditions.visibilityOf(allVehiclesModelPage.allVehicleModelSubtitle)).getText());
+        BrowserUtils.waitFor(2);
+        Assert.assertTrue("All Vehicles Model", allVehiclesModelPage.allVehiclesModelSubtitle.isDisplayed());
     }
     @Then("verify that all Vehicle model information is displayed")
     public void verify_that_all_vehicle_model_information_is_displayed() {
