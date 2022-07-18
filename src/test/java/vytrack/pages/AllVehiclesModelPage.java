@@ -20,6 +20,9 @@ public class AllVehiclesModelPage {
     @FindBy(xpath = "(//input[starts-with(@id,'column-c')])[1]")
     public WebElement idCheckbox;
 
+    @FindBy(xpath = "(//label[text()=’License Plate']")
+    public WebElement idCheckbox2;
+
     @FindBy(xpath = "(//input[starts-with(@id,'column-c')])[2]")
     public WebElement modelNameCheckbox;
 

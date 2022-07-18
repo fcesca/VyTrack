@@ -16,8 +16,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features" ,
         glue = "vytrack/stepDefinitions",
-        dryRun = false,
-        tags = "@VehicleModelPageAccess"
+        dryRun = false ,
+        tags = ""
 )
 public class CukesRunner {
 }
