@@ -30,10 +30,10 @@ public class AllCarsPage {
     private WebElement gridSettingBtnRightOfResetBtn;
 
     public boolean isGridSettingBtnRightOfResetBtn(){
-        int x = gridSettingBtnRightOfResetBtn.getLocation().getX();
-        int y = gridSettingBtnRightOfResetBtn.getLocation().getY();
-        if (x>y){
-            return false;
-        }else return true;
+        int xValue_gridSettingsBtn = gridSettingsBtn.getLocation().getX();
+        int xValue_resetBtn = resetBtn.getLocation().getY();
+        if(xValue_gridSettingsBtn > xValue_resetBtn){
+            return true;
+        }else return false;
     }
 }
