@@ -31,9 +31,9 @@ public class AllCarsPage {
 
     public boolean isGridSettingBtnRightOfResetBtn(){
         int xValue_gridSettingsBtn = gridSettingsBtn.getLocation().getX();
-        int xValue_resetBtn = resetBtn.getLocation().getY();
+        int xValue_resetBtn = resetBtn.getLocation().getX();
         if(xValue_gridSettingsBtn > xValue_resetBtn){
-            return true;
-        }else return false;
+            return false;
+        }else return true;
     }
 }
