@@ -43,6 +43,7 @@ public class AllCarsPage {
         }else
             return true;
     }
+
     public boolean isRefreshBtnLeftOfReset() {
 
         int x1 = refreshBtn.getLocation().getX();
