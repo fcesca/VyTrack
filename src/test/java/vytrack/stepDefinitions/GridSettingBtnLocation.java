@@ -14,7 +14,7 @@ public class GridSettingBtnLocation {
 
     @Given("That user is on the {string} Page under Fleet Module")
     public void that_user_is_on_the_page_under_fleet_module(String vehicles) {
-        managementLogin.user_is_on_vy_track_login_page();
+        managementLogin.manager_is_on_vy_track_login_page();
         loginPage.inputUsername.sendKeys("storemanager204");
         loginPage.inputPassword.sendKeys("UserUser123");
         managementLogin.manager_clicks_login_button();

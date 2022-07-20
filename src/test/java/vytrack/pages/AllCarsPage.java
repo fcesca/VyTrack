@@ -29,11 +29,30 @@ public class AllCarsPage {
     @FindBy(css = "div[class='column-manager dropdown']")
     private WebElement gridSettingBtnRightOfResetBtn;
 
+    @FindBy(xpath = "//a[@title='Refresh']")
+    public WebElement refreshBtn;
+
+
+
     public boolean isGridSettingBtnRightOfResetBtn(){
-        int x = gridSettingBtnRightOfResetBtn.getLocation().getX();
-        int y = gridSettingBtnRightOfResetBtn.getLocation().getY();
+        int x = refreshBtn.getLocation().getX();
+        int y = resetBtn.getLocation().getY();
+
         if (x>y){
             return false;
-        }else return true;
+        }else
+            return true;
     }
+    public boolean isRefreshBtnLeftOfReset() {
+
+        int x1 = refreshBtn.getLocation().getX();
+        int x2 = resetBtn.getLocation().getY();
+
+        if (x1 > x2) {
+            return true;
+        } else
+            return false;
+    }
+
+
 }

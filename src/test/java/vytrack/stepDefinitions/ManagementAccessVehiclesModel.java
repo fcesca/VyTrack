@@ -1,7 +1,7 @@
 package vytrack.stepDefinitions;
 
 import vytrack.pages.AllVehiclesModelPage;
-import vytrack.pages.BasePage;
+import vytrack.pages.BasePageManagement;
 import vytrack.pages.LoginPage;
 import vytrack.utilities.BrowserUtils;
 import io.cucumber.java.en.Given;
@@ -13,12 +13,12 @@ public class ManagementAccessVehiclesModel {
 
     ManagementLogin managementLogin = new ManagementLogin();
     LoginPage loginPage = new LoginPage();
-    BasePage basePage = new BasePage();
+    BasePageManagement basePage = new BasePageManagement();
     AllVehiclesModelPage allVehiclesModelPage = new AllVehiclesModelPage();
 
     @Given("That Store Manager or Sales Manager is logged in")
     public void that_store_manager_or_sales_manager_is_logged_in() {
-        managementLogin.user_is_on_vy_track_login_page();
+        managementLogin.manager_is_on_vy_track_login_page();
         loginPage.inputUsername.sendKeys("storemanager204");
         loginPage.inputPassword.sendKeys("UserUser123");
         managementLogin.manager_clicks_login_button();

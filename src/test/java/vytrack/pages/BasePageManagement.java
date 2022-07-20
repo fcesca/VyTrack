@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class BasePage {
+public class BasePageManagement {
 
-    public BasePage(){
+    public BasePageManagement(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
