@@ -19,4 +19,8 @@ public class BasePage {
 
     @FindBy(xpath = "//span[.='Vehicles Model']")
     public WebElement vehiclesModelBtn;
+
+    @FindBy(linkText = "Vehicles")
+    public WebElement VehiclesDropdown;
+
 }

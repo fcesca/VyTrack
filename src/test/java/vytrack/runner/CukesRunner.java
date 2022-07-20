@@ -16,8 +16,8 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features" ,
         glue = "vytrack/stepDefinitions",
-        dryRun = false ,
-        tags = ""
+        dryRun = true,
+        tags = "@RefreshButton"
 )
 public class CukesRunner {
 }
