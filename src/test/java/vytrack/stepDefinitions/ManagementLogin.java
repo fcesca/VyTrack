@@ -15,7 +15,7 @@ public class ManagementLogin {
     LoginPage loginPage = new LoginPage();
 
     @Given("manager is on VyTrack login page")
-    public void manager_is_on_vy_track_login_page() {
+    public void user_is_on_vy_track_login_page() {
         Driver.getDriver().get(ConfigurationReader.getProperty("env"));
     }
 
