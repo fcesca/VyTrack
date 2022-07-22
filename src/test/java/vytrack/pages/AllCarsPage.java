@@ -1,5 +1,6 @@
 package vytrack.pages;
 
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -26,23 +27,29 @@ public class AllCarsPage {
     @FindBy(xpath = "//a[@title='Reset']")
     public WebElement resetBtn;
 
-    @FindBy(css = "div[class='column-manager dropdown']")
-    private WebElement gridSettingBtnRightOfResetBtn;
+    @FindBy(id = "main-menu")
+    public WebElement mainMenu;
 
     @FindBy(xpath = "//a[@title='Refresh']")
     public WebElement refreshBtn;
 
 
+    public boolean isGridSettingBtnRightOfResetBtn() {
+        WebElement elementReset = resetBtn;
+        WebElement elementGridSet = gridSettingsBtn;
 
-    public boolean isGridSettingBtnRightOfResetBtn(){
-        int x = refreshBtn.getLocation().getX();
-        int y = resetBtn.getLocation().getY();
+        Point pointReset = elementReset.getLocation();
+        Point pointGridSet = elementGridSet.getLocation();
 
-        if (x>y){
-            return false;
-        }else
+        System.out.println("Reset Button Position from left side is: " + pointReset.getX() + " pixels.");
+        System.out.println("Grid Setting Button Position from Left side is: " + pointGridSet.getX() + " pixels.");
+
+        if (pointGridSet.getX() > pointReset.getX()) {
             return true;
+        } else return false;
+
     }
+
 
     public boolean isRefreshBtnLeftOfReset() {
 
