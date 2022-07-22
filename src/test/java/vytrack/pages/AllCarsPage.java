@@ -1,14 +1,15 @@
 package vytrack.pages;
 
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import vytrack.utilities.Driver;
+import org.openqa.selenium.Point;
+
 
 public class AllCarsPage {
 
-    public AllCarsPage(){
+    public AllCarsPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -30,9 +31,6 @@ public class AllCarsPage {
     @FindBy(id = "main-menu")
     public WebElement mainMenu;
 
-    @FindBy(xpath = "//a[@title='Refresh']")
-    public WebElement refreshBtn;
-
 
     public boolean isGridSettingBtnRightOfResetBtn() {
         WebElement elementReset = resetBtn;
@@ -47,20 +45,5 @@ public class AllCarsPage {
         if (pointGridSet.getX() > pointReset.getX()) {
             return true;
         } else return false;
-
     }
-
-
-    public boolean isRefreshBtnLeftOfReset() {
-
-        int x1 = refreshBtn.getLocation().getX();
-        int x2 = resetBtn.getLocation().getY();
-
-        if (x1 > x2) {
-            return true;
-        } else
-            return false;
-    }
-
-
 }
